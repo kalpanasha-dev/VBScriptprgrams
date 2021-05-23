@@ -1,0 +1,476 @@
+dim a
+a=10
+b=4.5
+msgbox typename(a)
+msgbox typename(b)
+msgbox a
+msgbox b
+b=typename(a)
+msgbox a
+msgbox b
+msgbox typename(b)
+
+
+OUTPUT
+Integer
+Double
+10
+4.5
+10
+Integer
+String
+
+*********************************************************************************************************************
+m a
+a=1000000000
+msgbox typename(a)
+a=12.5
+msgbox typename(a)
+a=true
+msgbox typename(a)
+a=null
+msgbox typename(a)
+a=#30/04/1985#
+msgbox typename(a)
+
+OUTPUT
+Long
+Double
+boolean
+Null
+Date
+*********************************************************************************************************************
+dim a
+a=2
+b=4
+msgbox a+b
+msgbox a-b
+msgbox a*b
+msgbox a/b
+msgbox b^a
+
+OUTPUT
+6	-2	8	0.5	16
+*********************************************************************************************************************
+
+dim a
+a=10
+b=5
+msgbox a>b
+OUTPUT
+True
+*********************************************************************************************
+dim a
+a=5
+b=6
+c=12
+d=15
+msgbox a<b and c<d
+msgbox a<b and c>d
+OUTPUT
+True
+False
+*********************************************************************************************
+dim a
+a="Kalpana"
+b="Sha"
+c="C.V.Raman Nagar"
+d="Bangalore"
+z="Fortuna Serenity Apartment"
+msgbox a&b
+msgbox a&" "&b
+msgbox a&vbtab&b
+msgbox a&" & "&b
+msgbox a&vbnewline&z&vbnewline&c&vbnewline&d
+OUTPUT
+KalpanaSha
+Kalpana Sha
+Kalpana Sha
+Kalpana & Sha
+Kalpana
+Fortuna Serenity Apartment
+C.V.Raman Nagar
+Bangalore
+*********************************************************************************************
+dim a
+a=true
+msgbox a
+msgbox NOT(a)
+
+OUTPUT
+True
+False
+*********************************************************************************************
+dim a,b,c
+a=InputBox("Enter a")
+b=InputBox("Enter b")
+c=a+b
+msgbox c
+msgbox a+b
+msgbox typename(a)
+msgbox typename(b)
+
+100200
+100200
+String
+String
+*********************************************************************************************
+dim a,b,c
+a=Cint(InputBox("Enter a"))
+b=Cint(InputBox("Enter b"))
+c=a+b
+msgbox c
+msgbox a+b
+msgbox typename(a)
+msgbox typename(a)
+
+300
+300
+Integer
+Integer
+dim a,b,c
+a="10"
+msgbox typename(a)
+b=cint(a)
+msgbox typename(a)
+msgbox typename(b)
+msgbox a
+msgbox b
+
+String
+Integer
+10
+10
+*********************************************************************************************
+dim a,b,c
+a=10
+msgbox typename(a)
+b=cstr(a)
+msgbox typename(b)
+msgbox b
+
+Integer	String	10
+*********************************************************************************************
+
+dim a,b,c
+a=1
+msgbox a
+msgbox typename(a)
+b=cbool(a)
+msgbox typename(b)
+msgbox b
+
+1	Integer	Boolean	true
+*********************************************************************************************
+dim a,b,c
+a=0
+msgbox a
+msgbox typename(a)
+b=cbool(a)
+msgbox typename(b)
+msgbox b
+
+0 Integer		Boolean		False
+*********************************************************************************************
+dim a,b,c
+a="04/30/1985"
+msgbox a
+msgbox typename(a)
+b=cdate(a)
+msgbox typename(b)
+msgbox b
+a=10
+msgbox isnumeric(a)
+
+04/30/1985	String	date	04/30/1985	True
+*********************************************************************************************
+a="10"
+msgbox Isnumeric(a)
+a="age.10"
+msgbox Isnumeric(a)
+
+True	False
+*********************************************************************************************
+dim a
+msgbox Isempty(a)
+a=10
+msgbox Isempty(a)
+
+True		False
+*********************************************************************************************
+dim a
+msgbox Isnull(a)
+a=NULL
+msgbox Isnull(a)
+
+False		True
+*********************************************************************************************
+dim a
+a="04/30/2014"
+msgbox Isdate(a)
+a="April,30,2014"
+msgbox Isdate(a)
+
+True	True
+*********************************************************************************************
+msgbox date
+msgbox time
+msgbox now
+
+current date	time	date and time
+*********************************************************************************************
+msgbox month(#04/30/2014#)			4
+msgbox monthname(4)				April
+msgbox monthname(month(date))		March
+msgbox monthname(1,true)			Jan
+msgbox monthname(1,false)			January
+
+msgbox year(#04/30/2014#)			2014
+
+msgbox weekday(#04/28/2014#)		2
+msgbox weekdayname(7,true)			Sat
+msgbox weekdayname(7,false)			Saturday
+msgbox weekday(#04/28/2014#,4)		6
+
+msgbox hour(time)				1
+msgbox hour(now)				1
+
+msgbox second(time)				50
+msgbox second(now)				51
+
+msgbox day(#04/30/2014#)			30
+*********************************************************************************************
+a=dateadd("yyyy",2,#04/30/1985#)
+msgbox a						04/30/1987
+a=dateadd("m",2,#04/30/1985#)
+msgbox a						06/30/1985
+a=dateadd("d",2,#04/30/1985#)
+msgbox a						05/02/1985
+a=dateadd("h",2,time)
+msgbox a						3:31:16 AM
+a=dateadd("yyyy",-2,#04/30/1985#)
+msgbox a						04/30/1983
+a=dateadd("m",-2,#04/30/1985#)
+msgbox a						02/28/1985
+a=dateadd("d",-2,#04/30/1985#)
+msgbox a						04/28/1985
+a=dateadd("h",-2,time)
+msgbox a						12/29/1899 11:32:21 PM
+*********************************************************************************************
+Dim age
+age=cint(Inputbox("Enter your Age"))
+If age>0 and age<15 Then
+    msgbox"UnEligible to Vote"
+    Else If age>=15 and age<=59 Then
+        msgbox"U r eligible to vote"
+        else If age>=60 Then
+            msgbox "U r senior citizen don't wait in the queue to Vote"
+            else
+            msgbox "Apply for voter id"
+        End If
+    End If
+End If
+*********************************************************************************************
+
+Dim Marks
+Marks=cint(Inputbox("Enter your Marks"))
+If Marks>0 and marks <=49 Then
+    msgbox"Fail"
+    Else If Marks >=50 and marks<=74 Then
+        msgbox"PASS"
+        else If Marks>=75 Then
+            msgbox "Distinction"
+            else
+            msgbox "Invalid Input"
+        End If
+    End If
+End If
+*********************************************************************************************
+Dim color
+color=Inputbox("Enter your color codes")
+Select Case color
+    Case "red"
+    msgbox"STOP"
+    Case "YELLOW"
+    msgbox "get ready to GOOO"
+    Case "green"
+    msgbox "GOOO"
+    case else
+    msgbox "Invalid Type"
+End Select
+*********************************************************************************************
+Dim color
+colour=Inputbox("Enter your color codes")
+color=lcase(colour)
+Select Case color
+    Case "red","pink"
+    msgbox"STOP"
+    Case "yellow"
+    msgbox "get ready to GOOO"
+    Case "green"
+    msgbox "GOOO"
+    case else
+    msgbox "Invalid Type"
+End Select
+ *********************************************************************************************
+       
+
+Dim color
+colour=Inputbox("Enter your color codes"&vblf&"1.RED"&vblf&"2.YELLOW"&vblf&"3.GREEN")
+color=lcase(colour)
+Select Case color
+    Case "red","pink"
+    msgbox"STOP"
+    Case "yellow"
+    msgbox "get ready to GOOO"
+    Case "green"
+    msgbox "GOOO"
+    case else
+    msgbox "Invalid Type"
+End Select
+ *********************************************************************************************
+Dim a(5)
+a(0)=10
+a(1)="hi"
+a(2)=a(0)
+a(3)=true
+a(4)=date	
+msgbox a(0)	
+msgbox a(1)
+msgbox a(2)
+msgbox a(3)
+msgbox a(4)			Todays’ date 3/31/2014
+msgbox typename(a(0))	Integer
+msgbox typename(a(1))	String
+msgbox typename(a(2))	Integer
+msgbox typename(a(3))	Boolean        
+msgbox typename(a(4))	Date
+ *********************************************************************************************
+Dim a(4,5)
+msgbox ubound(a,1)			4
+msgbox ubound(a,2)			5
+a(0,0)=10
+a(1,1)="hi"
+a(2,2)=50000
+msgbox a(0,0)				10
+msgbox a(1,1)				hi
+msgbox a(2,2)				50000
+msgbox typename(a(0,0))		Integer
+msgbox typename(a(1,1))		String
+msgbox typename(a(2,2))		Long
+*********************************************************************************************
+Dim a()
+ReDim a(2)
+a(0)=10
+a(1)="hi"
+a(2)=50000
+msgbox a(0)				10
+msgbox a(1)				hi
+msgbox a(2)				50000
+ReDim a(3)
+a(3)=67	
+msgbox a(0)				Blank		
+msgbox a(1) 				Blank
+msgbox a(2) 				Blank
+msgbox a(3)				67
+msgbox typename(a(0))		Empty
+msgbox typename(a(1)) 		Empty
+msgbox typename(a(2)) 		Empty
+msgbox typename(a(3))		67
+*********************************************************************************************
+Dim a()
+ReDim a(2)
+a(0)=10
+a(1)="hi"
+a(2)=50000
+msgbox a(0)				10
+msgbox a(1)				hi
+msgbox a(2)				50000
+ReDim preserve a(3)
+a(3)=555.777
+msgbox a(0)				10
+msgbox a(1)				hi
+msgbox a(2)				50000
+msgbox a(3)				555.777
+msgbox typename(a(0))		Integer
+msgbox typename(a(1))		String
+msgbox typename(a(2))		Long
+msgbox typename(a(3))		Double
+*********************************************************************************************
+Dim i
+For i = 1 To 10 Step 1
+    msgbox i
+Next
+    
+12345678910
+*********************************************************************************************
+Dim i
+For i = 10 To 1 Step -1
+    msgbox i
+Next
+*********************************************************************************************
+Dim i,var
+    var="   "
+For i = 1 To 10 
+var=var&i
+msgbox var
+Next
+    msgbox var
+
+1
+12
+123
+1234
+12345
+123456
+1234567
+12345678
+123456789
+12345678910
+12345678910
+
+
+
+
+
+
+
+Dim i,var
+    var="   "
+For i = 1 To 10 
+'var=var&":"&i
+'var=var&vbtab&i
+var=var&vbnewline&i
+msgbox var
+Next
+    msgbox var
+Dim i,var
+    var="   "
+For i = 1 To 10 
+'var=var&":"&i
+'var=var&vbtab&i
+var=var&vbnewline&i
+msgbox var
+Next
+    msgbox var
+
+****
+ 
+
+Dim i,var
+    For i = 1 To 4
+    For j = 1 To i Step 1
+        var=var&"*"
+         msgbox var
+           Next
+           var=var&vbnewline
+               msgbox var
+    Next
+    msgbox var
+
+*
+**
+***
+****
+
+
